@@ -1,6 +1,15 @@
 <div class="jumbotron center">
+	
+<% if user_signed_in? %>
+		<h1>You're logged in to awesome-town!</h1>
+		<p>Enjoy :) </p>
+	<% else %>
 <h1>Welcome to awesome-town!</h1>
 <p>Click Sign Up below to get started!
-	<p><%= link_to "Sign up" , "#", class: "btn btn-primary btn-lg" %>
-		<%= link_to "Log In" , "#", class: "btn btn-secondary btn-lg underline" %></p>
+	<p>
+		<%= link_to "Sign up" , new_user_registration_path, class: "btn btn-primary btn-lg" %>
+		<%= link_to "Log In" , new_user_session_path , class: "btn btn-secondary btn-lg underline" %>
+	</p>
+<% end %>
+
 </div>
